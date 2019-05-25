@@ -21,4 +21,10 @@ defmodule FizzBuzzerTest do
     assert FizzBuzzer.fizzbuzz(25) == "buzz"
   end
 
+  test "multiples of 3 and 5" do
+    assert FizzBuzzer.fizzbuzz(15) == "fizzbuzz"
+    assert FizzBuzzer.fizzbuzz(120) == "fizzbuzz"
+    assert FizzBuzzer.fizzbuzz(300) == "fizzbuzz"
+  end
+
 end

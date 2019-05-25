@@ -3,13 +3,17 @@ defmodule FizzBuzzer do
   @spec fizzbuzz(integer()) :: <<_::8>>
   def fizzbuzz(number) do
 
-    if is_multiple(number, 3) do
-      "fizz"
+    if is_multiple(number, 3) and is_multiple(number, 5) do
+      "fizzbuzz"
     else
-      if is_multiple(number, 5) do
-        "buzz"
+      if is_multiple(number, 3) do
+        "fizz"
       else
-        Integer.to_string(number)
+        if is_multiple(number, 5) do
+          "buzz"
+        else
+          Integer.to_string(number)
+        end
       end
     end
   end
