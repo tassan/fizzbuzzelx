@@ -2,7 +2,10 @@ defmodule FizzBuzzerTest do
   use ExUnit.Case
   doctest FizzBuzzer
 
-  test "greets the world" do
-    assert FizzBuzzer.hello() == :world
+  test "simple numbers" do
+    assert FizzBuzzer.fizzbuzz(1) == "1"
+    assert FizzBuzzer.fizzbuzz(2) == "2"
+    assert FizzBuzzer.fizzbuzz(4) == "4"
+
   end
 end
