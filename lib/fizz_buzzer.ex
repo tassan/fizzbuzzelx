@@ -2,17 +2,21 @@ defmodule FizzBuzzer do
 
   @spec fizzbuzz(integer()) :: <<_::8>>
   def fizzbuzz(number) do
-      case number do
-        5 -> "buzz"
-        10 -> "buzz"
-        25 -> "buzz"
-        3 -> "fizz"
-        6 -> "fizz"
-        9 -> "fizz"
-        1 -> "1"
-        2 -> "2"
-        4 -> "4"
+
+    if multipleOf(number, 3) == 0 do
+      "fizz"
+    else
+      if multipleOf(number, 5) == 0 do
+        "buzz"
+      else
+        Integer.to_string(number)
       end
+    end
+  end
+
+  @spec multipleOf(integer, integer) :: integer
+  def multipleOf(number, multiple) do
+    number - div(number, multiple) * multiple
   end
 
 end
